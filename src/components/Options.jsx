@@ -6,8 +6,8 @@ class Options extends React.Component {
   render() {
     return (
       <div className="options ui container">
-        <h5>Your preferences</h5>
-        <div className="ui toggle checkbox" onClick={toggleNewTabs}>
+        <h5>Preferences</h5>
+        <div className="ui toggle checkbox" onClick={toggleNewTabs()}>
           <input type="checkbox" name="public" />
           <label>Dark mode</label>
         </div>
@@ -24,4 +24,4 @@ const mapStateToProps = state => {
   return { newTabs: state.newTabs };
 };
 
-export default connect(mapStateToProps, {})(Options);
+export default connect(mapStateToProps, { toggleNewTabs })(Options);

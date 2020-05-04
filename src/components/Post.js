@@ -15,7 +15,12 @@ const getMarkup = text => {
 const notImage = ["self", "default"];
 
 const Post = ({ url, title, author, selftext, thumbnail, newTabs }) => (
-  <Card href={url} rel="noopener noreferrer" style={{ width: "100%" }}>
+  <Card
+    href={url}
+    rel="noopener noreferrer"
+    target={newTabs ? "_blank" : ""}
+    style={{ width: "100%" }}
+  >
     <Card.Content>
       {!notImage.includes(thumbnail) && (
         <Image floated="left" src={thumbnail} rounded bordered size="tiny" />

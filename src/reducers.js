@@ -3,6 +3,7 @@ import {
   INVALIDATE_SUBREDDIT,
   REQUEST_POSTS,
   RECEIVE_POSTS,
+  TOGGLE_NEW_TABS,
 } from "./constants";
 
 import { combineReducers } from "redux";
@@ -61,13 +62,8 @@ const postsBySubreddit = (state = {}, action) => {
 
 const newTabs = (state = false, action) => {
   switch (action.type) {
-    case "TOGGLE_NEW_TABS":
-      if (!state.newTabs) {
-        return { ...state, newTabs: true };
-      } else if (state.newTabs) {
-        return { ...state, newTabs: false };
-      }
-      break;
+    case TOGGLE_NEW_TABS:
+      return !state;
     default:
       return state;
   }
