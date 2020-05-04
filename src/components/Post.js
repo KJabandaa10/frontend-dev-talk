@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import { Card, Image } from "semantic-ui-react";
 import Remarkable from "remarkable";
 
@@ -13,8 +14,8 @@ const getMarkup = text => {
 
 const notImage = ["self", "default"];
 
-const Post = ({ url, title, author, selftext, thumbnail }) => (
-  <Card href={url} style={{ width: "100%" }}>
+const Post = ({ url, title, author, selftext, thumbnail, newTabs }) => (
+  <Card href={url} rel="noopener noreferrer" style={{ width: "100%" }}>
     <Card.Content>
       {!notImage.includes(thumbnail) && (
         <Image floated="left" src={thumbnail} rounded bordered size="tiny" />
@@ -26,4 +27,8 @@ const Post = ({ url, title, author, selftext, thumbnail }) => (
   </Card>
 );
 
-export default Post;
+const mapStateToProps = state => {
+  return { newTabs: state.newTabs };
+};
+
+export default connect(mapStateToProps, {})(Post);

@@ -1,20 +1,13 @@
 import React from "react";
+import { connect } from "react-redux";
+import { toggleNewTabs } from "../actions";
 
 class Options extends React.Component {
-  newTabs = () => {
-    // rel="noopener noreferrer"
-    // target="_blank"
-  };
-
-  darkMode = () => {
-    return null;
-  };
-
   render() {
     return (
       <div className="options ui container">
         <h5>Your preferences</h5>
-        <div className="ui toggle checkbox">
+        <div className="ui toggle checkbox" onClick={toggleNewTabs}>
           <input type="checkbox" name="public" />
           <label>Dark mode</label>
         </div>
@@ -27,4 +20,8 @@ class Options extends React.Component {
   }
 }
 
-export default Options;
+const mapStateToProps = state => {
+  return { newTabs: state.newTabs };
+};
+
+export default connect(mapStateToProps, {})(Options);

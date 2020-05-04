@@ -72,3 +72,8 @@ export const fetchPostsIfNeeded = subreddit => {
     }
   };
 };
+
+export const toggleNewTabs = newTabs => ({
+  type: "TOGGLE_NEW_TABS",
+  newTabs,
+});
