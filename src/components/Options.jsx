@@ -1,6 +1,15 @@
 import React from "react";
 
 class Options extends React.Component {
+  newTabs = () => {
+    // rel="noopener noreferrer"
+    // target="_blank"
+  };
+
+  darkMode = () => {
+    return null;
+  };
+
   render() {
     return (
       <div className="options ui container">
