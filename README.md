@@ -1,3 +1,7 @@
+# My contributions
+
+Added toggle for links to open in new tabs
+
 # Frontend Developer Forum
 
 Browse popular discussions and posts about popular Frontend threads such as JavaScript, React, Web Development, Open Source, Programming and so on. 
