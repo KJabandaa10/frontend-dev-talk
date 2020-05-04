@@ -3,6 +3,7 @@ import {
   INVALIDATE_SUBREDDIT,
   REQUEST_POSTS,
   RECEIVE_POSTS,
+  TOGGLE_NEW_TABS,
 } from "./constants";
 
 // Import fetch API in case of browser compatiblity issues
@@ -73,7 +74,6 @@ export const fetchPostsIfNeeded = subreddit => {
   };
 };
 
-export const toggleNewTabs = newTabs => ({
-  type: "TOGGLE_NEW_TABS",
-  newTabs,
-});
+export const toggleNewTabs = newTabs => {
+  return { type: TOGGLE_NEW_TABS, newTabs };
+};
