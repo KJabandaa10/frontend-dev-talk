@@ -60,7 +60,9 @@ const postsBySubreddit = (state = {}, action) => {
   }
 };
 
-const newTabs = (state = false, action) => {
+let INITIAL_STATE = false;
+
+const newTabs = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case TOGGLE_NEW_TABS:
       return !state;
